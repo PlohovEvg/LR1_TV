@@ -23,15 +23,8 @@ void List::Add_new_Node(Eta _e)
 		else
 		{
 			Node *p = head;
-
-			if (p->e == n->e)
-			{
-				p->e.IncNi();
-				delete n;
-				return;
-			}
-			else
-			{
+			Node *t;
+						
 				while (p != NULL)
 				{
 					if (p->e == n->e)
@@ -46,10 +39,14 @@ void List::Add_new_Node(Eta _e)
 						p->next = n;
 						return;
 					}
+					if (p->next == NULL)
+					{
+						t = p;
+					}
 					p = p->next;
 				}
-				p = n;
-			}
+				t->next = n;
+				p = n;			
 		}
 	}
 
