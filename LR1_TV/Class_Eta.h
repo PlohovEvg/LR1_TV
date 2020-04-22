@@ -46,4 +46,12 @@ public:
 			return false;
 		}
 	}
+	Eta& operator =(const Eta &e)
+	{
+		value = e.value;
+		ni = e.ni;
+		p = e.p;
+
+		return *this;
+	}
 };

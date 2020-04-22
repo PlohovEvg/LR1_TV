@@ -33,7 +33,7 @@ void List::Add_new_Node(Eta _e)
 						delete n;
 						return;
 					}
-					if ((n->e < p->e) && (n->e > p->next->e))
+					if ((n->e < p->e) && (p->next != NULL) && (n->e > p->next->e))
 					{
 						n->next = p->next;
 						p->next = n;
@@ -77,4 +77,32 @@ Eta List::Get_last_Node()
 		p = p->next;
 	}
 	return p->e;
+}
+
+int List::Get_Number_of_Nodes()
+{
+	int k = 0;
+	Node *p = head;
+
+	while (p != NULL)
+	{
+		k++;
+		p = p->next;
+	}
+
+	return k;
+}
+
+Eta List:: Get_Node(int i)
+{	
+	int l = 1;
+	Node *p = head;
+
+	while (l != i)
+	{
+		l++;
+		p = p->next;		
+	}
+
+	return p->e;	
 }
