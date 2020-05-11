@@ -10,7 +10,7 @@ struct Node
 	Eta e;
 };
 
-class List
+ class List
 {
 	Node *head;
 public:
